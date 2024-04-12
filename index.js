@@ -51,17 +51,32 @@ function game() {
     let scorePlayer = 0;
     let scoreComputer = 0;
 
-    for (let i=0; i<5; i++) {
-        const playerSelection = getPlayerChocie();
-        const computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
-        console.log("------------------------")
-        if (checkWinner(playerSelection, computerSelection) == "Player") {
-            scorePlayer++;
-        } else if(checkWinner(playerSelection, computerSelection) == "Computer") {
-            scoreComputer++;
-        }
+    // Comment out playing of 5 rounds:
+    //
+    // for (let i=0; i<5; i++) {
+    //     const playerSelection = getPlayerChocie();
+    //     const computerSelection = getComputerChoice();
+    //     console.log(playRound(playerSelection, computerSelection));
+    //     console.log("------------------------")
+    //     if (checkWinner(playerSelection, computerSelection) == "Player") {
+    //         scorePlayer++;
+    //     } else if(checkWinner(playerSelection, computerSelection) == "Computer") {
+    //         scoreComputer++;
+    //     }
+    // }
+
+  
+    const playerSelection = getPlayerChocie();
+    const computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+    console.log("------------------------")
+    if (checkWinner(playerSelection, computerSelection) == "Player") {
+        scorePlayer++;
+    } else if(checkWinner(playerSelection, computerSelection) == "Computer") {
+        scoreComputer++;
     }
+
+
 
     if (scorePlayer > scoreComputer) {
         console.log(`You: ${scorePlayer}, Computer: ${scoreComputer}`)
@@ -78,3 +93,7 @@ function game() {
 
 game();
 
+const btnChoice = document.querySelectorAll("button");
+btnChoice.forEach("click", () => {
+    
+})
